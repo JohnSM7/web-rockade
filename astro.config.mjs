@@ -8,7 +8,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-  site: 'https://rockade.es',
+  site: 'https://web-rockade.vercel.app',
   output: 'static',
   compressHTML: true,
 });

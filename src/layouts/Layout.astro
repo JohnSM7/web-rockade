@@ -13,7 +13,7 @@ const {
   image = '/images/rockade-cocteles.png',
 } = Astro.props;
 
-const siteURL = Astro.site ?? 'https://rockade.es';
+const siteURL = Astro.site ?? 'https://web-rockade.vercel.app';
 const canonicalURL = new URL(Astro.url.pathname, siteURL).toString();
 const imageURL = new URL(image, siteURL).toString();
 ---
