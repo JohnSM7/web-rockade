@@ -1,0 +1,77 @@
+---
+import SedeCard from './SedeCard.astro';
+
+const sedes = [
+  {
+    city: 'Madrid',
+    name: 'La Latina',
+    address: 'Calle del Almendro, 9, 28005 Madrid',
+    phone: '+34 618 31 94 02',
+    hours: [
+      { days: 'Lun – Jue', time: '18:00 – 01:00' },
+      { days: 'Vie – Sáb', time: '18:00 – 02:30' },
+      { days: 'Domingo', time: '13:00 – 01:00' },
+    ],
+    image: '/images/ambiente-1.webp',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Rockade+La+Latina+Calle+del+Almendro+9+Madrid',
+    accent: 'magenta' as const,
+  },
+  {
+    city: 'Madrid',
+    name: 'Malasaña',
+    address: 'Calle del Marqués de Sta. Ana, 11, 28004 Madrid',
+    phone: '+34 699 15 94 46',
+    hours: [
+      { days: 'Dom – Jue', time: '18:00 – 02:00' },
+      { days: 'Vie – Sáb', time: '18:00 – 03:30' },
+    ],
+    image: '/images/ambiente-4.webp',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Rockade+Malasaña+Marqués+de+Sta+Ana+11+Madrid',
+    accent: 'cyan' as const,
+  },
+  {
+    city: 'Bilbao',
+    name: 'Bilbao',
+    address: 'Alameda de Recalde, 11, 48009 Bilbao',
+    phone: '+34 623 46 47 44',
+    hours: [
+      { days: 'Lun – Mar', time: 'Cerrado', closed: true },
+      { days: 'Mié – Jue', time: '18:30 – 23:30' },
+      { days: 'Viernes', time: '17:00 – 01:30' },
+      { days: 'Sábado', time: '16:00 – 02:00' },
+      { days: 'Domingo', time: '16:30 – 21:30' },
+    ],
+    image: '/images/ambiente-3.webp',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Rockade+Bilbao+Alameda+de+Recalde+11',
+    accent: 'magenta' as const,
+  },
+];
+---
+
+<section id="contacto" class="relative section-pad overflow-hidden">
+  <div class="rk-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end" data-reveal>
+      <div class="lg:col-span-8">
+        <span class="section-eyebrow">// Locales</span>
+        <h2 class="h-section mt-5">
+          Tres bases.<br />
+          <span class="neon-text-magenta">Un mismo universo.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-4">
+        <p class="t-lead">
+          Encuéntranos en <span class="text-white">Madrid (La Latina y Malasaña)</span> y
+          <span class="text-white">Bilbao</span>. Reserva por teléfono, WhatsApp o pásate sin avisar —
+          siempre hay sitio para un crédito más.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      {sedes.map((s) => <SedeCard {...s} />)}
+    </div>
+  </div>
+</section>

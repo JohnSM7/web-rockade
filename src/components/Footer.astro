@@ -1,0 +1,104 @@
+---
+const year = new Date().getFullYear();
+
+const linkGroups = {
+  Rockade: [
+    { label: 'Inicio', href: '#inicio' },
+    { label: 'Carta', href: '#carta' },
+    { label: 'Eventos', href: '#eventos' },
+    { label: 'Sobre nosotros', href: '#sobre-nosotros' },
+    { label: 'Contacto', href: '#contacto' },
+  ],
+  Locales: [
+    { label: 'Rockade La Latina', href: '#contacto' },
+    { label: 'Rockade Malasaña', href: '#contacto' },
+    { label: 'Rockade Bilbao', href: '#contacto' },
+  ],
+  Legal: [
+    { label: 'Aviso legal', href: '#' },
+    { label: 'Política de privacidad', href: '#' },
+    { label: 'Política de cookies', href: '#' },
+  ],
+};
+
+const logo = '/images/logo-rockade.webp';
+---
+
+<footer class="relative mt-10 border-t border-white/10 bg-rockade-bgDeep/85 backdrop-blur-xl">
+  <div class="h-[2px] w-full bg-gradient-to-r from-rockade-magenta via-rockade-magentaDeep to-rockade-cyan opacity-80"></div>
+
+  <div class="rk-container py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
+      <div class="md:col-span-2 lg:col-span-2">
+        <a href="#inicio" class="inline-flex items-center" aria-label="Rockade — Inicio">
+          <img
+            src={logo}
+            alt="Rockade"
+            width="72"
+            height="72"
+            class="h-16 w-auto md:h-20 drop-shadow-[0_0_14px_rgba(216,0,189,0.5)]"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <p class="t-body mt-5 max-w-md text-rockade-textMuted">
+          Un bar con <span class="text-white">alma de recreativa y corazón rockero</span>.
+          Una vuelta a los años 70s — 80s con máquinas arcade, street food, +30 cervezas
+          artesanales y cócteles en Madrid y Bilbao.
+        </p>
+
+        <ul class="mt-7 space-y-2 t-small text-rockade-textMuted">
+          <li>📍 <span class="text-white/85">La Latina · Malasaña · Bilbao</span></li>
+          <li class="flex flex-wrap gap-x-3 gap-y-1 items-center">
+            <span>📞</span>
+            <a href="tel:+34618319402" class="hover:text-white">+34 618 31 94 02</a>
+            <span class="text-rockade-textDim">·</span>
+            <a href="tel:+34699159446" class="hover:text-white">+34 699 15 94 46</a>
+            <span class="text-rockade-textDim">·</span>
+            <a href="tel:+34623464744" class="hover:text-white">+34 623 46 47 44</a>
+          </li>
+        </ul>
+      </div>
+
+      {
+        Object.entries(linkGroups).map(([title, items]) => (
+          <div>
+            <p class="font-display uppercase tracking-[0.3em] text-rockade-cyan" style="font-size:clamp(0.78rem, 0.7rem + 0.25vw, 0.95rem)">
+              {title}
+            </p>
+            <ul class="mt-5 space-y-3">
+              {items.map((l) => (
+                <li>
+                  <a
+                    href={l.href}
+                    class="group inline-flex items-center gap-2 t-body text-rockade-textMuted hover:text-white transition-colors"
+                  >
+                    <span class="h-px w-3 bg-rockade-magenta/0 transition-all group-hover:w-5 group-hover:bg-rockade-magenta" />
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-14 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/5 pt-6 t-small text-rockade-textDim"
+    >
+      <p>© {year} Rockade. Insert coin to continue.</p>
+      <p>
+        Powered by
+        <a
+          href="https://tanesolutions.com"
+          target="_blank"
+          rel="noopener"
+          class="font-display uppercase tracking-[0.2em] text-rockade-cyan hover:text-white transition-colors underline-offset-4 hover:underline"
+        >
+          Tane Solutions
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

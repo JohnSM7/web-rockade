@@ -1,0 +1,132 @@
+---
+const cocteles = '/images/rockade-cocteles.png';
+const heroBg = '/images/gallery-8.png';
+const logo = '/images/logo-rockade.webp';
+---
+
+<!--
+  Hero diseñado para caber 100svh (small viewport — sin contar URL bar móvil).
+  Estructura compacta: eyebrow + H1 + lead + 2 CTAs + (imagen solo desktop).
+  El KPI ribbon vive FUERA del hero (componente HeroStats).
+-->
+<section
+  id="inicio"
+  class="relative isolate min-h-[100svh] flex items-center overflow-hidden pt-24 lg:pt-28 pb-8 lg:pb-10 scanlines"
+>
+  <!-- Background: pinballs Rockade -->
+  <div class="absolute inset-0 -z-10">
+    <img
+      src={heroBg}
+      alt="Máquinas pinball vintage iluminadas en Rockade"
+      class="h-full w-full object-cover opacity-55 scale-105"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-rockade-bg via-rockade-bg/85 to-rockade-bg/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-rockade-bg/30 via-transparent to-rockade-bg"></div>
+    <div class="absolute inset-0 bg-rockade-gradient mix-blend-screen opacity-60"></div>
+  </div>
+
+  <!-- Scan line -->
+  <div
+    class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-rockade-cyan to-transparent opacity-60 animate-scanline"
+  >
+  </div>
+
+  <div class="rk-container w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 xl:gap-16 items-center">
+      <!-- Texto -->
+      <div class="lg:col-span-7 xl:col-span-7 2xl:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left" data-reveal>
+        <!-- LOGO destacado -->
+        <div class="relative inline-block mb-6 lg:mb-8">
+          <!-- Glow detrás del logo -->
+          <div class="absolute inset-0 -z-10 bg-rockade-magenta/30 blur-[60px] animate-floaty"></div>
+          <div class="absolute inset-0 -z-10 bg-rockade-cyan/25 blur-[60px] translate-x-3 translate-y-2 animate-floaty" style="animation-delay:1.2s"></div>
+          <img
+            src={logo}
+            alt="Rockade — bar arcade retro"
+            width="600"
+            height="216"
+            class="relative w-auto drop-shadow-[0_0_30px_rgba(216,0,189,0.45)]"
+            style="height:clamp(5.5rem, 3.5rem + 10vw, 13.5rem)"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="flex items-center justify-center lg:justify-start gap-3 flex-wrap mb-4 lg:mb-6">
+          <span class="section-eyebrow rounded-full border border-rockade-cyan/40 bg-rockade-cyan/5 px-3 py-1.5 whitespace-nowrap inline-flex items-center gap-2">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-rockade-cyan opacity-70"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-rockade-cyan"></span>
+            </span>
+            Madrid · Bilbao
+          </span>
+        </div>
+
+        <h1 class="h-hero">
+          <span class="block neon-text-magenta animate-flicker">Alma de Recreativa<span class="text-white/70">,</span></span>
+          <span class="block">
+            Corazón
+            <span class="text-stroke-cyan">Rockero</span>
+            <span class="neon-text-cyan">.</span>
+          </span>
+        </h1>
+
+        <p class="t-lead mt-5 lg:mt-7 max-w-2xl">
+          Una vuelta a los <span class="text-white font-semibold">70's – 80's</span>:
+          <span class="text-rockade-cyan font-semibold">máquinas arcade</span>, street food,
+          <span class="text-rockade-magenta font-semibold">+30 cervezas</span> y cócteles. <span class="whitespace-nowrap font-semibold text-white">Madrid &amp; Bilbao.</span>
+        </p>
+
+        <div class="mt-7 lg:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center lg:justify-start">
+          <a href="#contacto" class="btn-rk-magenta w-full sm:w-auto text-center">Haz tu reserva</a>
+          <a href="#carta" class="btn-rk-cyan w-full sm:w-auto text-center">Ver carta <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <!-- Imagen (solo desktop, decorativa) -->
+      <div class="lg:col-span-5 xl:col-span-5 hidden lg:flex justify-center lg:justify-end" data-reveal>
+        <div class="relative w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
+          <div class="absolute inset-0 -z-10 bg-rockade-magenta/40 blur-[100px] animate-floaty"></div>
+          <div
+            class="absolute inset-0 -z-10 bg-rockade-cyan/30 blur-[100px] translate-x-10 -translate-y-8 animate-floaty"
+            style="animation-delay:1.2s"
+          ></div>
+
+          <img
+            src={cocteles}
+            alt="Cócteles signature de Rockade"
+            class="relative w-full drop-shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
+            loading="eager"
+            decoding="async"
+          />
+
+          <div
+            class="absolute top-2 -left-4 rotate-[-12deg] rounded-full border border-rockade-magenta/70 bg-rockade-bg/85 px-4 py-2 font-display text-xs uppercase tracking-[0.25em] text-rockade-magenta shadow-neonMagenta animate-floaty"
+          >
+            ★ Insert Coin
+          </div>
+          <div
+            class="absolute bottom-8 -right-3 rotate-[8deg] rounded-full border border-rockade-cyan/70 bg-rockade-bg/85 px-4 py-2 font-display text-xs uppercase tracking-[0.25em] text-rockade-cyan shadow-neonCyan animate-floaty"
+            style="animation-delay:1s"
+          >
+            High Score
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hint scroll mobile -->
+  <a
+    href="#stats"
+    aria-label="Bajar a estadísticas"
+    class="lg:hidden absolute bottom-3 left-1/2 -translate-x-1/2 inline-flex flex-col items-center gap-1 font-body text-[10px] uppercase tracking-[0.4em] text-rockade-textDim"
+  >
+    Scroll
+    <span class="h-6 w-[2px] bg-gradient-to-b from-rockade-cyan to-transparent"></span>
+  </a>
+</section>

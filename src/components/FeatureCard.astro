@@ -1,0 +1,70 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  accent?: 'cyan' | 'magenta';
+  image?: string;
+  imageAlt?: string;
+}
+
+const {
+  icon,
+  title,
+  description,
+  accent = 'cyan',
+  image,
+  imageAlt = title,
+} = Astro.props;
+const isCyan = accent === 'cyan';
+---
+
+<article
+  data-reveal
+  class:list={[
+    'group relative overflow-hidden rounded-2xl border border-white/10 bg-rockade-surface/70 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2',
+    isCyan ? 'hover:neon-border-cyan' : 'hover:neon-border-magenta',
+  ]}
+>
+  {
+    image && (
+      <div class="mb-6 overflow-hidden rounded-xl border border-white/5">
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          decoding="async"
+          class="aspect-[5/4] h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+      </div>
+    )
+  }
+
+  <div
+    class:list={[
+      'mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl text-3xl border',
+      isCyan
+        ? 'border-rockade-cyan/50 bg-rockade-cyan/10 text-rockade-cyan shadow-neonCyan'
+        : 'border-rockade-magenta/50 bg-rockade-magenta/10 text-rockade-magenta shadow-neonMagenta',
+    ]}
+  >
+    <span aria-hidden="true">{icon}</span>
+  </div>
+
+  <h3 class="h-sub text-white">
+    {title}
+  </h3>
+  <p class="t-body mt-3 text-rockade-textMuted">
+    {description}
+  </p>
+
+  <div
+    class:list={[
+      'absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100',
+      isCyan
+        ? 'bg-gradient-to-r from-rockade-cyan via-rockade-cyan/40 to-transparent'
+        : 'bg-gradient-to-r from-rockade-magenta via-rockade-magenta/40 to-transparent',
+    ]}
+  >
+  </div>
+</article>

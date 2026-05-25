@@ -1,0 +1,264 @@
+---
+const cartas = [
+  {
+    id: 'la-latina',
+    city: 'Madrid',
+    label: 'La Latina',
+    image: '/images/la-latina.webp',
+    headline: 'Cocina honesta y vermut con neón.',
+    description:
+      'En La Latina mezclamos sabor castizo y street food del mundo, regado con cerveza artesanal y coctelería retro. Carta amplia para picotear, compartir o cerrar la noche.',
+    sections: [
+      {
+        title: 'Para empezar',
+        items: [
+          { name: 'Patatas Rockade', desc: 'Bravas con salsa de la casa y alioli ahumado.', price: '6,50€' },
+          { name: 'Croquetas de jamón', desc: 'Cremosas, crujientes, peligrosamente adictivas.', price: '7,90€' },
+          { name: 'Nachos cargados', desc: 'Queso fundido, jalapeños, guacamole y pico de gallo.', price: '9,50€' },
+        ],
+      },
+      {
+        title: 'Lo gordo',
+        items: [
+          { name: 'Smash Burger 1989', desc: 'Doble carne madurada, cheddar, bacon y salsa secreta.', price: '13,50€' },
+          { name: 'Tacos al pastor', desc: 'Trío de tacos con piña asada, cilantro y lima.', price: '11,90€' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'malasana',
+    city: 'Madrid',
+    label: 'Malasaña',
+    image: '/images/malasana.webp',
+    headline: 'Más cañera, más noche, más cócteles.',
+    description:
+      'Marqués de Sta. Ana late hasta las 03:30. Carta enfocada a picoteo + cervezas + coctelería premium. Aquí la noche manda y los flippers cantan.',
+    sections: [
+      {
+        title: 'Snacks & Street food',
+        items: [
+          { name: 'Perrito NY', desc: 'Salchicha ahumada, mostaza dulce, crispy onions.', price: '8,90€' },
+          { name: 'Alitas BBQ', desc: 'Glaseadas con bourbon BBQ y crudités.', price: '9,90€' },
+          { name: 'Hummus Beirut', desc: 'Garbanzo, tahini, pan pita y aceitunas.', price: '6,90€' },
+        ],
+      },
+      {
+        title: 'Cócteles signature',
+        items: [
+          { name: 'Pixel Margarita', desc: 'Tequila reposado, lima, sal de chipotle.', price: '10,00€' },
+          { name: 'Negroni Neon', desc: 'Campari, gin, vermut rosso. Glow incluido.', price: '9,50€' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bilbao',
+    city: 'Bilbao',
+    label: 'Bilbao',
+    image: '/images/bilbao.webp',
+    headline: 'Pintxos, cerveza artesana y arcade.',
+    description:
+      'En Alameda Recalde el norte manda: producto local, pintxos rockeros y grifería con +14 cervezas artesanas rotando todas las semanas.',
+    sections: [
+      {
+        title: 'Pintxos & cocina',
+        items: [
+          { name: 'Pintxo de tortilla', desc: 'Patata, cebolla pochada, jugoso por dentro.', price: '3,50€' },
+          { name: 'Txuleta sliders', desc: 'Mini bocatas de chuleta con pimiento verde.', price: '12,50€' },
+          { name: 'Ensaladilla rusa', desc: 'Atún, gamba, mayonesa tibia. Receta casera.', price: '8,50€' },
+        ],
+      },
+      {
+        title: 'Cervezas de grifo',
+        items: [
+          { name: 'IPA local', desc: 'Doble lúpulo, amargor justo.', price: '4,80€' },
+          { name: 'Lager Pilsen', desc: 'Limpia, refrescante, easy drinking.', price: '3,80€' },
+          { name: 'Stout Pinball', desc: 'Café, cacao y final tostado.', price: '4,90€' },
+        ],
+      },
+    ],
+  },
+];
+
+const heroCarta = '/images/rockade-cocteles.png';
+---
+
+<section id="carta" class="relative section-pad">
+  <div class="rk-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end" data-reveal>
+      <div class="lg:col-span-8">
+        <span class="section-eyebrow">// Nuestra carta</span>
+        <h2 class="h-section mt-5">
+          Cervezas, cócteles<br />
+          <span class="neon-text-magenta">& comida del mundo.</span>
+        </h2>
+        <p class="t-lead mt-6 max-w-3xl">
+          Más de <span class="text-white">30 tipos de cerveza</span>, refrescos y una increíble variedad de cócteles.
+          Cada local tiene su propia carta — elige tu base y descubre qué te espera.
+        </p>
+      </div>
+      <div class="lg:col-span-4 flex lg:justify-end">
+
+      <!-- Tabs por ciudad -->
+      <div
+        role="tablist"
+        aria-label="Carta por local"
+        class="flex overflow-x-auto lg:overflow-x-visible lg:flex-wrap gap-2 rounded-xl border border-white/10 bg-rockade-surface/60 p-2 backdrop-blur max-w-full no-scrollbar self-start lg:self-auto"
+      >
+        {
+          cartas.map((c, i) => (
+            <button
+              role="tab"
+              type="button"
+              data-tab={c.id}
+              aria-selected={i === 0}
+              class:list={[
+                'carta-tab rounded-lg px-5 py-2.5 font-display text-sm md:text-base uppercase tracking-[0.18em] transition-all whitespace-nowrap shrink-0',
+                i === 0
+                  ? 'bg-gradient-to-r from-rockade-magenta/30 to-rockade-cyan/30 text-white shadow-neonDual'
+                  : 'text-rockade-textMuted hover:text-white hover:bg-white/5',
+              ]}
+            >
+              {c.label}
+            </button>
+          ))
+        }
+      </div>
+      </div>
+    </div>
+
+    <!-- Panels -->
+    <div class="mt-20">
+      {
+        cartas.map((c, i) => (
+          <div
+            data-panel={c.id}
+            class:list={[
+              'carta-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20',
+              i === 0 ? '' : 'hidden',
+            ]}
+          >
+            <div class="lg:col-span-5 xl:col-span-4" data-reveal>
+              <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-rockade-surface">
+                <img
+                  src={c.image}
+                  alt={`Ambiente Rockade ${c.label}`}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[4/5] w-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-tr from-rockade-magenta/30 via-transparent to-rockade-cyan/30 mix-blend-overlay opacity-80" />
+                <div class="absolute bottom-5 left-5 right-5">
+                  <div class="glass-card p-5">
+                    <p class="t-small uppercase tracking-[0.3em] text-rockade-cyan">
+                      Rockade · {c.city}
+                    </p>
+                    <p class="mt-2 h-sub text-white">{c.label}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 xl:col-span-8" data-reveal>
+              <h3 class="h-sub text-white">
+                {c.headline}
+              </h3>
+              <p class="t-lead mt-4">{c.description}</p>
+
+              {c.sections.map((sec) => (
+                <div class="mt-10">
+                  <div class="flex items-center gap-3">
+                    <p class="font-display uppercase tracking-[0.3em] text-rockade-cyan" style="font-size:clamp(0.95rem, 0.8rem + 0.4vw, 1.25rem)">
+                      {sec.title}
+                    </p>
+                    <span class="h-px flex-1 bg-gradient-to-r from-rockade-cyan/40 to-transparent" />
+                  </div>
+                  <ul class="mt-5 divide-y divide-white/5">
+                    {sec.items.map((item) => (
+                      <li class="group flex items-start justify-between gap-6 py-5 transition-colors hover:bg-white/[0.02] px-3 -mx-3 rounded-xl">
+                        <div>
+                          <p class="font-display tracking-wide text-white group-hover:neon-text-magenta" style="font-size:clamp(1.1rem, 0.9rem + 0.6vw, 1.6rem)">
+                            {item.name}
+                          </p>
+                          <p class="t-body mt-1 text-rockade-textMuted">{item.desc}</p>
+                        </div>
+                        <span class="whitespace-nowrap font-display text-rockade-cyan" style="font-size:clamp(1rem, 0.85rem + 0.5vw, 1.4rem)">
+                          {item.price}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              <div class="mt-10 flex flex-wrap gap-3">
+                <a href="#contacto" class="btn-rk-magenta">
+                  Ver el menú completo
+                </a>
+                <a href="#contacto" class="btn-rk-ghost">
+                  Reservar mesa
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Banner cócteles -->
+    <div
+      class="mt-24 relative overflow-hidden rounded-3xl border border-white/10 bg-rockade-bgDeep p-8 md:p-14 lg:p-16"
+      data-reveal
+    >
+      <div class="absolute inset-0 -z-0 bg-rockade-gradient opacity-70"></div>
+      <div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="md:col-span-7">
+          <p class="section-eyebrow">// Bebidas & Cócteles</p>
+          <h3 class="h-section mt-4 text-white">
+            <span class="neon-text-cyan">Más de 30 cervezas</span>,
+            refrescos y una <span class="neon-text-magenta">increíble variedad</span> de cócteles.
+          </h3>
+          <p class="t-lead mt-5 max-w-xl">
+            Coctelería clásica, signatures inspirados en la cultura pop y un grifo
+            rotativo con cervezas artesanales nacionales e internacionales.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contacto" class="btn-rk-cyan">Ver la carta</a>
+            <a href="#contacto" class="btn-rk-ghost">Contáctanos</a>
+          </div>
+        </div>
+        <div class="md:col-span-5 flex justify-center">
+          <img
+            src={heroCarta}
+            alt="Selección de cócteles signature de Rockade"
+            class="w-full max-w-sm md:max-w-md drop-shadow-[0_20px_60px_rgba(216,0,189,0.35)]"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.querySelectorAll('.carta-tab').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-tab');
+      document.querySelectorAll('.carta-tab').forEach((b) => {
+        const active = b === btn;
+        b.setAttribute('aria-selected', String(active));
+        b.classList.toggle('bg-gradient-to-r', active);
+        b.classList.toggle('from-rockade-magenta/30', active);
+        b.classList.toggle('to-rockade-cyan/30', active);
+        b.classList.toggle('text-white', active);
+        b.classList.toggle('shadow-neonDual', active);
+        b.classList.toggle('text-rockade-textMuted', !active);
+      });
+      document.querySelectorAll('.carta-panel').forEach((p) => {
+        p.classList.toggle('hidden', p.getAttribute('data-panel') !== id);
+      });
+    });
+  });
+</script>

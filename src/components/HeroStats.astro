@@ -1,0 +1,42 @@
+---
+const kpis = [
+  { value: '+30', label: 'Cervezas artesanas', accent: 'magenta' as const },
+  { value: '3', label: 'Locales en España', accent: 'cyan' as const },
+  { value: '70-90', label: 'Décadas de nostalgia', accent: 'magenta' as const },
+  { value: '∞', label: 'Créditos por noche', accent: 'cyan' as const },
+];
+---
+
+<aside id="stats" class="relative border-y border-white/10 bg-rockade-bgDeep/70 backdrop-blur-md">
+  <div class="rk-container">
+    <dl class="grid grid-cols-2 lg:grid-cols-4">
+      {
+        kpis.map((k, i) => (
+          <div
+            data-reveal
+            style={`animation-delay:${0.05 * (i + 1)}s`}
+            class:list={[
+              "flex flex-col gap-1.5 py-5 lg:py-7 px-4 lg:px-8",
+              i % 2 === 0 ? "border-r border-white/10" : "",
+              i < 2 ? "border-b border-white/10" : "",
+              i === 1 ? "lg:border-r" : "",
+              "lg:border-b-0 lg:border-white/10"
+            ]}
+          >
+            <dd
+              class:list={[
+                'h-sub leading-none',
+                k.accent === 'magenta' ? 'neon-text-magenta' : 'neon-text-cyan',
+              ]}
+            >
+              {k.value}
+            </dd>
+            <dt class="t-small uppercase tracking-[0.3em] text-rockade-textDim">
+              {k.label}
+            </dt>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</aside>

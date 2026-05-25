@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Rockade · Un bar con alma de recreativa y corazón rockero',
+  description = 'Una vuelta a los años 70s — 80s de la mano de las mejores máquinas de arcade, street food, +30 tipos de cerveza artesanal y una amplia variedad de cócteles en nuestros locales de Madrid (La Latina, Malasaña) y Bilbao.',
+  image = '/images/rockade-cocteles.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://rockade.es').toString();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1F1F1F" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rockade" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon (logo real Rockade vía URL pública) -->
+    <link rel="icon" type="image/webp" href="/images/logo-rockade.webp" />
+    <link rel="apple-touch-icon" href="/images/logo-rockade.webp" />
+
+    <!-- Google Fonts: Bebas Neue (display) + Gothic A1 (sans) + Roboto (body) — las MISMAS que usa rockade.es -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gothic+A1:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org: Restaurante -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Restaurant',
+      name: 'Rockade',
+      description,
+      url: 'https://rockade.es',
+      image,
+      servesCuisine: ['Street Food', 'Internacional'],
+      priceRange: '€€',
+      acceptsReservations: true,
+      sameAs: [],
+      address: [
+        {
+          '@type': 'PostalAddress',
+          streetAddress: 'Cl. del Marqués de Sta. Ana, 11',
+          addressLocality: 'Madrid',
+          postalCode: '28004',
+          addressCountry: 'ES',
+        },
+        {
+          '@type': 'PostalAddress',
+          streetAddress: 'Calle del Almendro, 9',
+          addressLocality: 'Madrid',
+          postalCode: '28005',
+          addressCountry: 'ES',
+        },
+        {
+          '@type': 'PostalAddress',
+          streetAddress: 'Alameda de Recalde, 11',
+          addressLocality: 'Bilbao',
+          postalCode: '48009',
+          addressCountry: 'ES',
+        },
+      ],
+    })} />
+  </head>
+
+  <body class="relative min-h-screen">
+    <!-- Background grid sutil — sin blobs flotantes (creaban bandas de color por el medio) -->
+    <div
+      class="pointer-events-none fixed inset-0 -z-10 bg-grid opacity-25 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_80%)]"
+    >
+    </div>
+
+    <slot />
+
+    <script>
+      // Reveal on scroll (vanilla)
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('animate-slideUp');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

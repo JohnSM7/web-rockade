@@ -1,0 +1,101 @@
+---
+import FeatureCard from './FeatureCard.astro';
+
+const features = [
+  {
+    icon: '🕹️',
+    title: 'Las mejores máquinas arcade',
+    description:
+      'Auténticas recreativas de los 70s y 80s restauradas. Pac-Man, pinballs, fighters y clásicos eternos. Trae monedas — o no, también te las cambiamos.',
+    accent: 'cyan' as const,
+    image: '/images/gallery-12.png',
+    imageAlt: 'Máquinas pinball iluminadas con luces neón en Rockade',
+  },
+  {
+    icon: '🍔',
+    title: 'Street food sin reglas',
+    description:
+      'Podrás disfrutar de una amplia variedad de platos, desde street food hasta comida más tradicional. Cocina honesta, raciones rockeras.',
+    accent: 'magenta' as const,
+    image: '/images/gallery-5.png',
+    imageAlt: 'Cervezas brindando entre amigos en Rockade',
+  },
+  {
+    icon: '🎸',
+    title: 'El mejor ambiente actual',
+    description:
+      'Rockade nace como un lugar de encuentro donde disfrutar de lo mejor de épocas pasadas con el mejor ambiente actual. Música, luces y memoria pop.',
+    accent: 'cyan' as const,
+    image: '/images/gallery-13.png',
+    imageAlt: 'Ambiente nocturno rockero en Rockade',
+  },
+];
+
+const marqueeTags = [
+  'Pac-Man',
+  'Street Fighter',
+  'Pinball',
+  'Rock & Roll',
+  'Tacos',
+  'IPA',
+  '+30 Cervezas',
+  'Cócteles',
+  'Galaga',
+  'Madrid',
+  'Bilbao',
+  'Insert Coin',
+];
+---
+
+<section id="sobre-nosotros" class="relative section-pad overflow-hidden">
+  <div class="rk-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end" data-reveal>
+      <div class="lg:col-span-8">
+        <span class="section-eyebrow">// Quiénes somos</span>
+        <h2 class="h-section mt-5">
+          Un espacio de ocio único<br />
+          <span class="neon-text-cyan">que te hará viajar en el tiempo.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-4">
+        <p class="t-lead">
+          Rockade nace como un lugar de encuentro donde poder disfrutar de
+          <span class="text-white">lo mejor de épocas pasadas</span> con el mejor ambiente actual.
+          Máquinas, música, comida y cerveza — todo bajo un mismo neón.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      {features.map((f) => <FeatureCard {...f} />)}
+    </div>
+  </div>
+
+  <!-- Marquee retro FULL-BLEED edge to edge -->
+  <div
+    class="mt-20 overflow-hidden border-y border-white/10 bg-rockade-surface/40 py-6"
+    data-reveal
+  >
+    <div class="flex animate-marquee whitespace-nowrap font-display uppercase tracking-[0.2em]" style="font-size:clamp(1.1rem, 0.9rem + 0.7vw, 1.75rem)">
+      {
+        [...marqueeTags, ...marqueeTags].map((tag, i) => (
+          <span class="px-8 inline-flex items-center gap-3">
+            <span
+              class:list={[
+                'h-2 w-2 rounded-full',
+                i % 2 === 0 ? 'bg-rockade-magenta' : 'bg-rockade-cyan',
+              ]}
+            />
+            <span
+              class:list={[
+                i % 2 === 0 ? 'text-rockade-magenta' : 'text-rockade-cyan',
+              ]}
+            >
+              {tag}
+            </span>
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>

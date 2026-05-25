@@ -1,0 +1,18 @@
+{
+  "name": "rockade-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Landing page de Rockade — Alma de Recreativa, Corazón Rockero",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^6.3.7",
+    "tailwindcss": "^3.4.13"
+  }
+}

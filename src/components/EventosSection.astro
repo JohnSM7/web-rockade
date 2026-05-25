@@ -1,0 +1,118 @@
+---
+const eventTypes = [
+  {
+    icon: '🎂',
+    title: 'Cumpleaños',
+    description: 'Privatiza una zona, máquina recreativa libre y barra con cervezas y cócteles.',
+  },
+  {
+    icon: '🤝',
+    title: 'Reuniones',
+    description: 'Espacios reservados para empresa, prensa o producto. Catering a medida.',
+  },
+  {
+    icon: '🎯',
+    title: 'Teambuilding',
+    description: 'Torneos arcade, retos por equipos y picoteo. El rompehielos perfecto.',
+  },
+];
+
+const eventImage = '/images/eventos.webp';
+---
+
+<section id="eventos" class="relative section-pad overflow-hidden">
+  <div class="rk-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div class="lg:col-span-5 xl:col-span-4 order-2 lg:order-1" data-reveal>
+        <div class="relative">
+          <div
+            class="absolute -inset-4 -z-10 rounded-3xl bg-rockade-cyan/20 blur-3xl animate-floaty"
+          >
+          </div>
+          <div class="relative overflow-hidden rounded-3xl border border-white/10">
+            <img
+              src={eventImage}
+              alt="Evento privado en Rockade con ambiente arcade"
+              loading="lazy"
+              decoding="async"
+              class="aspect-[4/5] w-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-rockade-magenta/35 via-transparent to-rockade-cyan/35 mix-blend-overlay"
+            >
+            </div>
+
+            <div class="absolute top-5 left-5">
+              <span
+                class="rounded-full border border-rockade-cyan/60 bg-rockade-bg/80 px-4 py-1.5 font-display text-xs uppercase tracking-[0.3em] text-rockade-cyan backdrop-blur"
+              >
+                Group Mode
+              </span>
+            </div>
+
+            <div class="absolute bottom-5 left-5 right-5">
+              <div class="glass-card p-5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="t-small uppercase tracking-[0.3em] text-rockade-cyan">
+                    Privados
+                  </p>
+                  <p class="mt-2 h-sub text-white">
+                    Hasta 80 personas
+                  </p>
+                </div>
+                <span class="text-4xl" aria-hidden="true">🪩</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 xl:col-span-8 order-1 lg:order-2" data-reveal>
+        <span class="section-eyebrow">// Eventos privados</span>
+        <h2 class="h-section mt-4">
+          Celebra tu evento<br />
+          <span class="neon-text-cyan">con nosotros.</span>
+        </h2>
+        <p class="t-lead mt-6 max-w-2xl">
+          ¿Buscas un sitio donde celebrar tu evento? Ya sea
+          <span class="text-white">cumpleaños, reuniones o teambuilding</span>;
+          nuestros locales son perfectos.
+        </p>
+
+        <div class="mt-10 grid sm:grid-cols-3 gap-5">
+          {
+            eventTypes.map((e, i) => (
+              <div
+                data-reveal
+                style={`animation-delay:${0.1 * (i + 1)}s`}
+                class="group rounded-2xl border border-white/10 bg-rockade-surface/60 p-6 backdrop-blur transition-all hover:-translate-y-1 hover:neon-border-magenta"
+              >
+                <div class="text-4xl" aria-hidden="true">{e.icon}</div>
+                <p class="mt-4 h-sub text-white">
+                  {e.title}
+                </p>
+                <p class="t-body mt-2 text-rockade-textMuted">
+                  {e.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="https://wa.me/34618319402?text=Hola%20Rockade%2C%20quiero%20organizar%20un%20evento"
+            target="_blank"
+            rel="noopener"
+            class="btn-rk-magenta"
+          >
+            💬 Contáctanos
+          </a>
+          <a href="#contacto" class="btn-rk-ghost">
+            Ver locales
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

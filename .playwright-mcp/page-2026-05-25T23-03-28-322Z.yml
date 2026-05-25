@@ -1,0 +1,474 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e4]:
+      - link "Rockade — Inicio" [ref=e5] [cursor=pointer]:
+        - /url: "#inicio"
+        - img "Rockade — bar arcade retro" [ref=e6]
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Inicio" [ref=e9] [cursor=pointer]:
+            - /url: "#inicio"
+            - text: Inicio
+        - listitem [ref=e10]:
+          - link "Carta" [ref=e11] [cursor=pointer]:
+            - /url: "#carta"
+            - text: Carta
+        - listitem [ref=e12]:
+          - link "Eventos" [ref=e13] [cursor=pointer]:
+            - /url: "#eventos"
+            - text: Eventos
+        - listitem [ref=e14]:
+          - link "Sobre nosotros" [ref=e15] [cursor=pointer]:
+            - /url: "#sobre-nosotros"
+            - text: Sobre nosotros
+        - listitem [ref=e16]:
+          - link "Contacto" [ref=e17] [cursor=pointer]:
+            - /url: "#contacto"
+            - text: Contacto
+      - link "Haz tu reserva" [ref=e18] [cursor=pointer]:
+        - /url: "#contacto"
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - img "Máquinas pinball vintage iluminadas en Rockade" [ref=e22]
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: Madrid · Bilbao
+          - generic [ref=e32]: // Bar arcade · Street food · +30 cervezas
+        - heading "Alma de Recreativa, Corazón Rockero ." [level=1] [ref=e33]:
+          - generic [ref=e34]: Alma de Recreativa,
+          - generic [ref=e35]: Corazón Rockero .
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - paragraph [ref=e38]: Una vuelta a los años 70's – 80's de la mano de las mejores máquinas de arcade, street food, +30 tipos de cerveza artesanal y una amplia variedad de cócteles en nuestros locales de Madrid y Bilbao.
+            - generic [ref=e39]:
+              - link "Haz tu reserva" [ref=e40] [cursor=pointer]:
+                - /url: "#contacto"
+              - link "Ver carta" [ref=e41] [cursor=pointer]:
+                - /url: "#carta"
+                - text: Ver carta
+                - generic [ref=e42]: →
+          - generic [ref=e44]:
+            - img "Cócteles signature de Rockade con luces neón" [ref=e47]
+            - generic [ref=e48]: ★ Insert Coin
+            - generic [ref=e49]: High Score
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - definition [ref=e54]: "+30"
+          - term [ref=e55]: Cervezas artesanas
+        - generic [ref=e56]:
+          - definition [ref=e57]: "3"
+          - term [ref=e58]: Locales en España
+        - generic [ref=e59]:
+          - definition [ref=e60]: 70-90
+          - term [ref=e61]: Décadas de nostalgia
+        - generic [ref=e62]:
+          - definition [ref=e63]: ∞
+          - term [ref=e64]: Créditos por noche
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: // Quiénes somos
+            - heading "Un espacio de ocio único que te hará viajar en el tiempo." [level=2] [ref=e70]:
+              - text: Un espacio de ocio único
+              - text: que te hará viajar en el tiempo.
+          - paragraph [ref=e72]: Rockade nace como un lugar de encuentro donde poder disfrutar de lo mejor de épocas pasadas con el mejor ambiente actual. Máquinas, música, comida y cerveza — todo bajo un mismo neón.
+        - generic [ref=e73]:
+          - article [ref=e74]:
+            - img "Máquinas pinball iluminadas con luces neón en Rockade" [ref=e76]
+            - generic [ref=e78]: 🕹️
+            - heading "Las mejores máquinas arcade" [level=3] [ref=e79]
+            - paragraph [ref=e80]: Auténticas recreativas de los 70s y 80s restauradas. Pac-Man, pinballs, fighters y clásicos eternos. Trae monedas — o no, también te las cambiamos.
+          - article [ref=e81]:
+            - img "Cervezas brindando entre amigos en Rockade" [ref=e83]
+            - generic [ref=e85]: 🍔
+            - heading "Street food sin reglas" [level=3] [ref=e86]
+            - paragraph [ref=e87]: Podrás disfrutar de una amplia variedad de platos, desde street food hasta comida más tradicional. Cocina honesta, raciones rockeras.
+          - article [ref=e88]:
+            - img "Ambiente nocturno rockero en Rockade" [ref=e90]
+            - generic [ref=e92]: 🎸
+            - heading "El mejor ambiente actual" [level=3] [ref=e93]
+            - paragraph [ref=e94]: Rockade nace como un lugar de encuentro donde disfrutar de lo mejor de épocas pasadas con el mejor ambiente actual. Música, luces y memoria pop.
+      - generic [ref=e96]:
+        - generic [ref=e99]: Pac-Man
+        - generic [ref=e102]: Street Fighter
+        - generic [ref=e105]: Pinball
+        - generic [ref=e108]: Rock & Roll
+        - generic [ref=e111]: Tacos
+        - generic [ref=e114]: IPA
+        - generic [ref=e117]: +30 Cervezas
+        - generic [ref=e120]: Cócteles
+        - generic [ref=e123]: Galaga
+        - generic [ref=e126]: Madrid
+        - generic [ref=e129]: Bilbao
+        - generic [ref=e132]: Insert Coin
+        - generic [ref=e135]: Pac-Man
+        - generic [ref=e138]: Street Fighter
+        - generic [ref=e141]: Pinball
+        - generic [ref=e144]: Rock & Roll
+        - generic [ref=e147]: Tacos
+        - generic [ref=e150]: IPA
+        - generic [ref=e153]: +30 Cervezas
+        - generic [ref=e156]: Cócteles
+        - generic [ref=e159]: Galaga
+        - generic [ref=e162]: Madrid
+        - generic [ref=e165]: Bilbao
+        - generic [ref=e168]: Insert Coin
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - generic [ref=e173]: // La sala
+          - heading "Máquinas, neones y memorabilia pop." [level=2] [ref=e174]:
+            - text: Máquinas, neones
+            - text: y memorabilia pop.
+        - paragraph [ref=e176]: Pac-Man, Street Fighter, pinballs Elvis, Indiana Jones y un sinfín de máquinas restauradas. Asómate a la sala antes de venir.
+      - generic [ref=e177]:
+        - figure "Pinballs" [ref=e178]:
+          - img "Fila de pinballs Elvis y otros clásicos iluminados" [ref=e179]
+          - generic [ref=e182]:
+            - generic [ref=e183]: Pinballs
+            - img [ref=e185]
+        - figure "Bar" [ref=e188]:
+          - img "Entrada del bar con neón verde \"BAR\"" [ref=e189]
+          - generic [ref=e192]:
+            - generic [ref=e193]: Bar
+            - img [ref=e195]
+        - figure "Game On" [ref=e198]:
+          - img "Grupo de amigos jugando al pinball con lámparas chinas de colores" [ref=e199]
+          - generic [ref=e202]:
+            - generic [ref=e203]: Game On
+            - img [ref=e205]
+        - figure "Rock" [ref=e208]:
+          - img "Pared con posters de los Ramones y los Rolling Stones" [ref=e209]
+          - generic [ref=e212]:
+            - generic [ref=e213]: Rock
+            - img [ref=e215]
+        - figure "Neon" [ref=e218]:
+          - img "Neón verde Magna sobre pared de piedra" [ref=e219]
+          - generic [ref=e222]:
+            - generic [ref=e223]: Neon
+            - img [ref=e225]
+        - figure "Lounge" [ref=e228]:
+          - img "Lounge con lámparas chinas multicolores y posters de Eagles, The Who" [ref=e229]
+          - generic [ref=e232]:
+            - generic [ref=e233]: Lounge
+            - img [ref=e235]
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]: 🕹️
+          - generic [ref=e241]:
+            - paragraph [ref=e242]: // Insert Coin
+            - paragraph [ref=e243]: ¿Listo para tu próximo high score?
+        - link "Reservar mesa" [ref=e244] [cursor=pointer]:
+          - /url: "#contacto"
+    - generic [ref=e246]:
+      - generic [ref=e247]:
+        - generic [ref=e248]:
+          - generic [ref=e249]: // Nuestra carta
+          - heading "Cervezas, cócteles & comida del mundo." [level=2] [ref=e250]:
+            - text: Cervezas, cócteles
+            - text: "& comida del mundo."
+          - paragraph [ref=e251]: Más de 30 tipos de cerveza, refrescos y una increíble variedad de cócteles. Cada local tiene su propia carta — elige tu base y descubre qué te espera.
+        - tablist "Carta por local" [ref=e253]:
+          - tab "La Latina" [selected] [ref=e254] [cursor=pointer]
+          - tab "Malasaña" [ref=e255] [cursor=pointer]
+          - tab "Bilbao" [ref=e256] [cursor=pointer]
+      - generic [ref=e258]:
+        - generic [ref=e260]:
+          - img "Ambiente Rockade La Latina" [ref=e261]
+          - generic [ref=e264]:
+            - paragraph [ref=e265]: Rockade · Madrid
+            - paragraph [ref=e266]: La Latina
+        - generic [ref=e267]:
+          - heading "Cocina honesta y vermut con neón." [level=3] [ref=e268]
+          - paragraph [ref=e269]: En La Latina mezclamos sabor castizo y street food del mundo, regado con cerveza artesanal y coctelería retro. Carta amplia para picotear, compartir o cerrar la noche.
+          - generic [ref=e270]:
+            - paragraph [ref=e272]: Para empezar
+            - list [ref=e274]:
+              - listitem [ref=e275]:
+                - generic [ref=e276]:
+                  - paragraph [ref=e277]: Patatas Rockade
+                  - paragraph [ref=e278]: Bravas con salsa de la casa y alioli ahumado.
+                - generic [ref=e279]: 6,50€
+              - listitem [ref=e280]:
+                - generic [ref=e281]:
+                  - paragraph [ref=e282]: Croquetas de jamón
+                  - paragraph [ref=e283]: Cremosas, crujientes, peligrosamente adictivas.
+                - generic [ref=e284]: 7,90€
+              - listitem [ref=e285]:
+                - generic [ref=e286]:
+                  - paragraph [ref=e287]: Nachos cargados
+                  - paragraph [ref=e288]: Queso fundido, jalapeños, guacamole y pico de gallo.
+                - generic [ref=e289]: 9,50€
+          - generic [ref=e290]:
+            - paragraph [ref=e292]: Lo gordo
+            - list [ref=e294]:
+              - listitem [ref=e295]:
+                - generic [ref=e296]:
+                  - paragraph [ref=e297]: Smash Burger 1989
+                  - paragraph [ref=e298]: Doble carne madurada, cheddar, bacon y salsa secreta.
+                - generic [ref=e299]: 13,50€
+              - listitem [ref=e300]:
+                - generic [ref=e301]:
+                  - paragraph [ref=e302]: Tacos al pastor
+                  - paragraph [ref=e303]: Trío de tacos con piña asada, cilantro y lima.
+                - generic [ref=e304]: 11,90€
+          - generic [ref=e305]:
+            - link "Ver el menú completo" [ref=e306] [cursor=pointer]:
+              - /url: "#contacto"
+            - link "Reservar mesa" [ref=e307] [cursor=pointer]:
+              - /url: "#contacto"
+      - generic [ref=e310]:
+        - generic [ref=e311]:
+          - paragraph [ref=e312]: // Bebidas & Cócteles
+          - heading "Más de 30 cervezas, refrescos y una increíble variedad de cócteles." [level=3] [ref=e313]
+          - paragraph [ref=e314]: Coctelería clásica, signatures inspirados en la cultura pop y un grifo rotativo con cervezas artesanales nacionales e internacionales.
+          - generic [ref=e315]:
+            - link "Ver la carta" [ref=e316] [cursor=pointer]:
+              - /url: "#contacto"
+            - link "Contáctanos" [ref=e317] [cursor=pointer]:
+              - /url: "#contacto"
+        - img "Selección de cócteles signature de Rockade" [ref=e319]
+    - generic [ref=e322]:
+      - generic [ref=e326]:
+        - img "Evento privado en Rockade con ambiente arcade" [ref=e327]
+        - generic [ref=e329]: Group Mode
+        - generic [ref=e331]:
+          - generic [ref=e332]:
+            - paragraph [ref=e333]: Privados
+            - paragraph [ref=e334]: Hasta 80 personas
+          - generic [ref=e335]: 🪩
+      - generic [ref=e336]:
+        - generic [ref=e337]: // Eventos privados
+        - heading "Celebra tu evento con nosotros." [level=2] [ref=e338]:
+          - text: Celebra tu evento
+          - text: con nosotros.
+        - paragraph [ref=e339]: ¿Buscas un sitio donde celebrar tu evento? Ya sea cumpleaños, reuniones o teambuilding; nuestros locales son perfectos.
+        - generic [ref=e340]:
+          - generic [ref=e341]:
+            - generic [ref=e342]: 🎂
+            - paragraph [ref=e343]: Cumpleaños
+            - paragraph [ref=e344]: Privatiza una zona, máquina recreativa libre y barra con cervezas y cócteles.
+          - generic [ref=e345]:
+            - generic [ref=e346]: 🤝
+            - paragraph [ref=e347]: Reuniones
+            - paragraph [ref=e348]: Espacios reservados para empresa, prensa o producto. Catering a medida.
+          - generic [ref=e349]:
+            - generic [ref=e350]: 🎯
+            - paragraph [ref=e351]: Teambuilding
+            - paragraph [ref=e352]: Torneos arcade, retos por equipos y picoteo. El rompehielos perfecto.
+        - generic [ref=e353]:
+          - link "💬 Contáctanos" [ref=e354] [cursor=pointer]:
+            - /url: https://wa.me/34618319402?text=Hola%20Rockade%2C%20quiero%20organizar%20un%20evento
+          - link "Ver locales" [ref=e355] [cursor=pointer]:
+            - /url: "#contacto"
+    - generic [ref=e357]:
+      - generic [ref=e358]:
+        - generic [ref=e359]:
+          - generic [ref=e360]: // Locales
+          - heading "Tres bases. Un mismo universo." [level=2] [ref=e361]:
+            - text: Tres bases.
+            - text: Un mismo universo.
+        - paragraph [ref=e363]: Encuéntranos en Madrid (La Latina y Malasaña) y Bilbao. Reserva por teléfono, WhatsApp o pásate sin avisar — siempre hay sitio para un crédito más.
+      - generic [ref=e364]:
+        - article [ref=e365]:
+          - generic [ref=e366]:
+            - img "Rockade La Latina" [ref=e367]
+            - generic [ref=e370]: 📍 Madrid
+          - generic [ref=e371]:
+            - heading "Rockade La Latina" [level=3] [ref=e372]
+            - list [ref=e373]:
+              - listitem [ref=e374]:
+                - generic [ref=e375]: 📌
+                - generic [ref=e376]: Calle del Almendro, 9, 28005 Madrid
+              - listitem [ref=e377]:
+                - generic [ref=e378]: 📞
+                - link "+34 618 31 94 02" [ref=e379] [cursor=pointer]:
+                  - /url: tel:+34618319402
+            - generic [ref=e380]:
+              - paragraph [ref=e381]: ⏰ Horarios
+              - list [ref=e382]:
+                - listitem [ref=e383]:
+                  - generic [ref=e384]: Lun – Jue
+                  - generic [ref=e385]: 18:00 – 01:00
+                - listitem [ref=e386]:
+                  - generic [ref=e387]: Vie – Sáb
+                  - generic [ref=e388]: 18:00 – 02:30
+                - listitem [ref=e389]:
+                  - generic [ref=e390]: Domingo
+                  - generic [ref=e391]: 13:00 – 01:00
+            - generic [ref=e392]:
+              - link "💬 WhatsApp" [ref=e393] [cursor=pointer]:
+                - /url: https://wa.me/34618319402?text=%C2%A1Hola!%20Quiero%20reservar%20mesa%20en%20Rockade%20La%20Latina.
+              - link "🗺️ Llegar" [ref=e394] [cursor=pointer]:
+                - /url: https://www.google.com/maps/search/?api=1&query=Rockade+La+Latina+Calle+del+Almendro+9+Madrid
+            - link "Ver carta La Latina" [ref=e395] [cursor=pointer]:
+              - /url: "#carta"
+              - text: Ver carta La Latina
+              - generic [ref=e396]: →
+        - article [ref=e398]:
+          - generic [ref=e399]:
+            - img "Rockade Malasaña" [ref=e400]
+            - generic [ref=e403]: 📍 Madrid
+          - generic [ref=e404]:
+            - heading "Rockade Malasaña" [level=3] [ref=e405]
+            - list [ref=e406]:
+              - listitem [ref=e407]:
+                - generic [ref=e408]: 📌
+                - generic [ref=e409]: Calle del Marqués de Sta. Ana, 11, 28004 Madrid
+              - listitem [ref=e410]:
+                - generic [ref=e411]: 📞
+                - link "+34 699 15 94 46" [ref=e412] [cursor=pointer]:
+                  - /url: tel:+34699159446
+            - generic [ref=e413]:
+              - paragraph [ref=e414]: ⏰ Horarios
+              - list [ref=e415]:
+                - listitem [ref=e416]:
+                  - generic [ref=e417]: Dom – Jue
+                  - generic [ref=e418]: 18:00 – 02:00
+                - listitem [ref=e419]:
+                  - generic [ref=e420]: Vie – Sáb
+                  - generic [ref=e421]: 18:00 – 03:30
+            - generic [ref=e422]:
+              - link "💬 WhatsApp" [ref=e423] [cursor=pointer]:
+                - /url: https://wa.me/34699159446?text=%C2%A1Hola!%20Quiero%20reservar%20mesa%20en%20Rockade%20Malasa%C3%B1a.
+              - link "🗺️ Llegar" [ref=e424] [cursor=pointer]:
+                - /url: https://www.google.com/maps/search/?api=1&query=Rockade+Malasaña+Marqués+de+Sta+Ana+11+Madrid
+            - link "Ver carta Malasaña" [ref=e425] [cursor=pointer]:
+              - /url: "#carta"
+              - text: Ver carta Malasaña
+              - generic [ref=e426]: →
+        - article [ref=e428]:
+          - generic [ref=e429]:
+            - img "Rockade Bilbao" [ref=e430]
+            - generic [ref=e433]: 📍 Bilbao
+          - generic [ref=e434]:
+            - heading "Rockade Bilbao" [level=3] [ref=e435]
+            - list [ref=e436]:
+              - listitem [ref=e437]:
+                - generic [ref=e438]: 📌
+                - generic [ref=e439]: Alameda de Recalde, 11, 48009 Bilbao
+              - listitem [ref=e440]:
+                - generic [ref=e441]: 📞
+                - link "+34 623 46 47 44" [ref=e442] [cursor=pointer]:
+                  - /url: tel:+34623464744
+            - generic [ref=e443]:
+              - paragraph [ref=e444]: ⏰ Horarios
+              - list [ref=e445]:
+                - listitem [ref=e446]:
+                  - generic [ref=e447]: Lun – Mar
+                  - generic [ref=e448]: Cerrado
+                - listitem [ref=e449]:
+                  - generic [ref=e450]: Mié – Jue
+                  - generic [ref=e451]: 18:30 – 23:30
+                - listitem [ref=e452]:
+                  - generic [ref=e453]: Viernes
+                  - generic [ref=e454]: 17:00 – 01:30
+                - listitem [ref=e455]:
+                  - generic [ref=e456]: Sábado
+                  - generic [ref=e457]: 16:00 – 02:00
+                - listitem [ref=e458]:
+                  - generic [ref=e459]: Domingo
+                  - generic [ref=e460]: 16:30 – 21:30
+            - generic [ref=e461]:
+              - link "💬 WhatsApp" [ref=e462] [cursor=pointer]:
+                - /url: https://wa.me/34623464744?text=%C2%A1Hola!%20Quiero%20reservar%20mesa%20en%20Rockade%20Bilbao.
+              - link "🗺️ Llegar" [ref=e463] [cursor=pointer]:
+                - /url: https://www.google.com/maps/search/?api=1&query=Rockade+Bilbao+Alameda+de+Recalde+11
+            - link "Ver carta Bilbao" [ref=e464] [cursor=pointer]:
+              - /url: "#carta"
+              - text: Ver carta Bilbao
+              - generic [ref=e465]: →
+  - contentinfo [ref=e467]:
+    - generic [ref=e469]:
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - link "Rockade ROCKADE" [ref=e472] [cursor=pointer]:
+            - /url: "#inicio"
+            - img "Rockade" [ref=e473]
+            - generic [ref=e474]: ROCKADE
+          - paragraph [ref=e475]: Un bar con alma de recreativa y corazón rockero. Una vuelta a los años 70s — 80s con máquinas arcade, street food, +30 cervezas artesanales y cócteles en Madrid y Bilbao.
+          - list [ref=e476]:
+            - listitem [ref=e477]: 📍 La Latina · Malasaña · Bilbao
+            - listitem [ref=e478]:
+              - generic [ref=e479]: 📞
+              - link "+34 618 31 94 02" [ref=e480] [cursor=pointer]:
+                - /url: tel:+34618319402
+              - generic [ref=e481]: ·
+              - link "+34 699 15 94 46" [ref=e482] [cursor=pointer]:
+                - /url: tel:+34699159446
+              - generic [ref=e483]: ·
+              - link "+34 623 46 47 44" [ref=e484] [cursor=pointer]:
+                - /url: tel:+34623464744
+        - generic [ref=e485]:
+          - paragraph [ref=e486]: Rockade
+          - list [ref=e487]:
+            - listitem [ref=e488]:
+              - link "Inicio" [ref=e489] [cursor=pointer]:
+                - /url: "#inicio"
+                - text: Inicio
+            - listitem [ref=e491]:
+              - link "Carta" [ref=e492] [cursor=pointer]:
+                - /url: "#carta"
+                - text: Carta
+            - listitem [ref=e494]:
+              - link "Eventos" [ref=e495] [cursor=pointer]:
+                - /url: "#eventos"
+                - text: Eventos
+            - listitem [ref=e497]:
+              - link "Sobre nosotros" [ref=e498] [cursor=pointer]:
+                - /url: "#sobre-nosotros"
+                - text: Sobre nosotros
+            - listitem [ref=e500]:
+              - link "Contacto" [ref=e501] [cursor=pointer]:
+                - /url: "#contacto"
+                - text: Contacto
+        - generic [ref=e503]:
+          - paragraph [ref=e504]: Locales
+          - list [ref=e505]:
+            - listitem [ref=e506]:
+              - link "Rockade La Latina" [ref=e507] [cursor=pointer]:
+                - /url: "#contacto"
+                - text: Rockade La Latina
+            - listitem [ref=e509]:
+              - link "Rockade Malasaña" [ref=e510] [cursor=pointer]:
+                - /url: "#contacto"
+                - text: Rockade Malasaña
+            - listitem [ref=e512]:
+              - link "Rockade Bilbao" [ref=e513] [cursor=pointer]:
+                - /url: "#contacto"
+                - text: Rockade Bilbao
+        - generic [ref=e515]:
+          - paragraph [ref=e516]: Legal
+          - list [ref=e517]:
+            - listitem [ref=e518]:
+              - link "Aviso legal" [ref=e519] [cursor=pointer]:
+                - /url: "#"
+                - text: Aviso legal
+            - listitem [ref=e521]:
+              - link "Política de privacidad" [ref=e522] [cursor=pointer]:
+                - /url: "#"
+                - text: Política de privacidad
+            - listitem [ref=e524]:
+              - link "Política de cookies" [ref=e525] [cursor=pointer]:
+                - /url: "#"
+                - text: Política de cookies
+      - generic [ref=e527]:
+        - paragraph [ref=e528]: © 2026 Rockade. Insert coin to continue.
+        - paragraph [ref=e529]:
+          - text: Powered by
+          - link "Tane Solutions" [ref=e530] [cursor=pointer]:
+            - /url: https://tanesolutions.com
+  - generic [ref=e533]:
+    - button "Menu" [ref=e534]:
+      - img [ref=e536]
+      - generic: Menu
+    - button "Inspect" [ref=e540]:
+      - img [ref=e542]
+      - generic: Inspect
+    - button "Audit" [ref=e544]:
+      - img [ref=e546]
+      - generic: Audit
+    - button "Settings" [ref=e549]:
+      - img [ref=e551]
+      - generic: Settings

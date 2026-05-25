@@ -1,0 +1,158 @@
+---
+interface HourLine {
+  days: string;
+  time: string;
+  closed?: boolean;
+}
+
+interface Props {
+  city: string;
+  name: string;
+  address: string;
+  phone: string;
+  hours: HourLine[];
+  image: string;
+  mapsUrl: string;
+  cartaUrl?: string;
+  accent?: 'cyan' | 'magenta';
+}
+
+const {
+  city,
+  name,
+  address,
+  phone,
+  hours,
+  image,
+  mapsUrl,
+  cartaUrl = '#carta',
+  accent = 'cyan',
+} = Astro.props;
+
+const isCyan = accent === 'cyan';
+const phoneDigits = phone.replace(/[^0-9+]/g, '');
+const waLink = `https://wa.me/${phoneDigits.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
+  `¡Hola! Quiero reservar mesa en Rockade ${name}.`
+)}`;
+---
+
+<article
+  data-reveal
+  class:list={[
+    'group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-rockade-surface/70 backdrop-blur-md transition-all duration-300 hover:-translate-y-2',
+    isCyan ? 'hover:neon-border-cyan' : 'hover:neon-border-magenta',
+  ]}
+>
+  <div class="relative h-64 md:h-72 overflow-hidden">
+    <img
+      src={image}
+      alt={`Rockade ${name}`}
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+    />
+    <div
+      class:list={[
+        'absolute inset-0 mix-blend-overlay opacity-85',
+        isCyan
+          ? 'bg-gradient-to-t from-rockade-cyan/55 via-rockade-cyan/10 to-transparent'
+          : 'bg-gradient-to-t from-rockade-magenta/55 via-rockade-magenta/10 to-transparent',
+      ]}
+    >
+    </div>
+    <div class="absolute top-5 left-5 right-5 flex items-start justify-between">
+      <span
+        class:list={[
+          'rounded-full border bg-rockade-bg/75 px-3.5 py-1.5 font-body text-xs uppercase tracking-[0.3em] backdrop-blur',
+          isCyan
+            ? 'border-rockade-cyan/60 text-rockade-cyan'
+            : 'border-rockade-magenta/60 text-rockade-magenta',
+        ]}
+      >
+        📍 {city}
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-1 p-6 md:p-8">
+    <h3
+      class:list={[
+        'h-sub',
+        isCyan ? 'neon-text-cyan' : 'neon-text-magenta',
+      ]}
+    >
+      Rockade {name}
+    </h3>
+
+    <ul class="mt-6 space-y-3 t-body">
+      <li class="flex items-start gap-3 text-rockade-textMuted">
+        <span aria-hidden="true" class="mt-0.5">📌</span>
+        <span class="text-white/90">{address}</span>
+      </li>
+      <li class="flex items-start gap-3 text-rockade-textMuted">
+        <span aria-hidden="true" class="mt-0.5">📞</span>
+        <a
+          href={`tel:${phoneDigits}`}
+          class="text-white/90 hover:text-white underline-offset-4 hover:underline"
+        >
+          {phone}
+        </a>
+      </li>
+    </ul>
+
+    <div class="mt-6 rounded-xl border border-white/5 bg-rockade-bgDeep/60 p-5">
+      <p class="font-display uppercase tracking-[0.3em] text-rockade-cyan mb-3" style="font-size:clamp(0.78rem, 0.7rem + 0.25vw, 0.95rem)">
+        ⏰ Horarios
+      </p>
+      <ul class="space-y-1.5 t-small">
+        {
+          hours.map((h) => (
+            <li class="flex items-center justify-between gap-3 text-rockade-textMuted">
+              <span class="text-white/85">{h.days}</span>
+              <span class:list={['font-mono', h.closed ? 'text-rockade-textDim' : 'text-white']}>
+                {h.time}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mt-7 grid grid-cols-2 gap-3">
+      <a
+        href={waLink}
+        target="_blank"
+        rel="noopener"
+        class:list={[isCyan ? 'btn-rk-cyan' : 'btn-rk-magenta']}
+      >
+        💬 WhatsApp
+      </a>
+      <a
+        href={mapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="btn-rk-ghost"
+      >
+        🗺️ Llegar
+      </a>
+    </div>
+
+    <a
+      href={cartaUrl}
+      class="mt-4 inline-flex items-center gap-2 font-display uppercase tracking-[0.2em] text-white/80 hover:text-white"
+      style="font-size:clamp(0.82rem, 0.72rem + 0.3vw, 1rem)"
+    >
+      Ver carta {name} <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <div
+    class:list={[
+      'absolute inset-x-0 bottom-0 h-[3px]',
+      isCyan
+        ? 'bg-gradient-to-r from-rockade-cyan via-rockade-cyan/50 to-transparent'
+        : 'bg-gradient-to-r from-rockade-magenta via-rockade-magenta/50 to-transparent',
+    ]}
+  >
+  </div>
+</article>

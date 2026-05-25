@@ -1,0 +1,115 @@
+---
+// Mosaico de fotos reales de Rockade — máquinas, neones, posters
+const tiles = [
+  {
+    src: '/images/gallery-8.png',
+    alt: 'Fila de pinballs Elvis y otros clásicos iluminados',
+    tag: 'Pinballs',
+    span: 'lg:col-span-7 lg:row-span-2',
+  },
+  {
+    src: '/images/gallery-6.png',
+    alt: 'Entrada del bar con neón verde "BAR"',
+    tag: 'Bar',
+    span: 'lg:col-span-5',
+  },
+  {
+    src: '/images/gallery-4.png',
+    alt: 'Grupo de amigos jugando al pinball con lámparas chinas de colores',
+    tag: 'Game On',
+    span: 'lg:col-span-5',
+  },
+  {
+    src: '/images/gallery-13.png',
+    alt: 'Pared con posters de los Ramones y los Rolling Stones',
+    tag: 'Rock',
+    span: 'lg:col-span-6',
+  },
+  {
+    src: '/images/gallery-3.png',
+    alt: 'Neón verde Magna sobre pared de piedra',
+    tag: 'Neon',
+    span: 'lg:col-span-3',
+  },
+  {
+    src: '/images/gallery-7.png',
+    alt: 'Lounge con lámparas chinas multicolores y posters de Eagles, The Who',
+    tag: 'Lounge',
+    span: 'lg:col-span-3',
+  },
+];
+---
+
+<section id="galeria" class="relative section-pad overflow-hidden">
+  <div class="rk-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-12 lg:mb-16" data-reveal>
+      <div class="lg:col-span-8">
+        <span class="section-eyebrow">// La sala</span>
+        <h2 class="h-section mt-5">
+          Máquinas, neones<br />
+          <span class="neon-text-magenta">y memorabilia pop.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-4">
+        <p class="t-lead">
+          Pac-Man, Street Fighter, pinballs <span class="text-white">Elvis</span>,
+          <span class="text-white">Indiana Jones</span> y un sinfín de máquinas restauradas. Asómate
+          a la sala antes de venir.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mosaico bento -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-6 [grid-auto-rows:240px] sm:[grid-auto-rows:280px] lg:[grid-auto-rows:320px]">
+      {
+        tiles.map((t) => (
+          <figure
+            data-reveal
+            class:list={[
+              'group relative overflow-hidden rounded-2xl border border-white/10 bg-rockade-surface',
+              t.span,
+            ]}
+          >
+            <img
+              src={t.src}
+              alt={t.alt}
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-rockade-bg/85 via-rockade-bg/20 to-transparent" />
+            <div class="absolute inset-0 mix-blend-overlay opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-tr from-rockade-magenta/30 to-rockade-cyan/30" />
+
+            <figcaption class="absolute inset-x-0 bottom-0 p-4 lg:p-6 flex items-center justify-between gap-3">
+              <span class="font-display uppercase tracking-[0.25em] text-white" style="font-size:clamp(0.85rem, 0.7rem + 0.4vw, 1.15rem)">
+                {t.tag}
+              </span>
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-rockade-cyan/60 bg-rockade-bg/70 text-rockade-cyan transition-all group-hover:bg-rockade-cyan group-hover:text-rockade-bg group-hover:rotate-45">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </figcaption>
+
+            <!-- Esquina neón en hover -->
+            <span class="pointer-events-none absolute top-3 left-3 h-3 w-3 rounded-full bg-rockade-magenta opacity-0 group-hover:opacity-100 transition-opacity shadow-neonMagenta" />
+          </figure>
+        ))
+      }
+    </div>
+
+    <!-- CTA debajo del mosaico -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-white/10 bg-rockade-surface/50 p-6 lg:p-8" data-reveal>
+      <div class="flex items-center gap-5">
+        <span class="text-5xl animate-floaty" aria-hidden="true">🕹️</span>
+        <div>
+          <p class="font-display uppercase tracking-[0.25em] text-rockade-cyan" style="font-size:clamp(0.85rem, 0.7rem + 0.4vw, 1.05rem)">
+            // Insert Coin
+          </p>
+          <p class="h-sub text-white mt-2">
+            ¿Listo para tu próximo high score?
+          </p>
+        </div>
+      </div>
+      <a href="#contacto" class="btn-rk-magenta">Reservar mesa</a>
+    </div>
+  </div>
+</section>
